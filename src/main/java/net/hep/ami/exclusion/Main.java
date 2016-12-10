@@ -60,30 +60,24 @@ public class Main extends AbstractHandler
 
 				String cmd = args.remove(0);
 
-				/**/ if(nr >= 2 && cmd.equals("Lock"))
-				{
+				/**/ if(nr >= 2 && cmd.equals("Lock")) {
 					data = lock(args.remove(0), args);
 				}
-				else if(nr >= 2 && cmd.equals("Unlock"))
-				{
+				else if(nr >= 2 && cmd.equals("Unlock")) {
 					data = unlock(args.remove(0), args);
 				}
-				else if(nr == 1 && cmd.equals("UnlockAll"))
-				{
+				else if(nr == 1 && cmd.equals("UnlockAll")) {
 					data = unlockAll(args.remove(0), args);
 				}
-				else
-				{
+				else {
 					data = "-1";
 				}
 			}
-			else
-			{
+			else {
 				data = "-1";
 			}
 		}
-		else
-		{
+		else {
 			data = "-1";
 		}
 
@@ -117,74 +111,63 @@ public class Main extends AbstractHandler
 
 	/*---------------------------------------------------------------------*/
 
-	private synchronized String lock(String server, List<String> args)
+	private String lock(String server, List<String> args)
 	{
-		/**/	/*---------------------------------------------------------*/
-		/**/
-		/**/	for(String arg: args)
-		/**/	{
-		/**/		if(m_locks.get(arg) != null)
-		/**/		{
-		/**/			return "1";
-		/**/		}
-		/**/	}
-		/**/
-		/**/	/*---------------------------------------------------------*/
-		/**/
-		/**/	for(String arg: args)
-		/**/	{
-		/**/		m_locks.put(arg, server);
-		/**/	}
-		/**/
-		/**/	/*---------------------------------------------------------*/
-		/**/
-		/**/	return "0";
+		synchronized(this)
+		{
+			/**/	/*-----------------------------------------------------*/
+			/**/
+			/**/	for(String arg: args) if(m_locks.get(arg) != null) return "1";
+			/**/
+			/**/	/*-----------------------------------------------------*/
+			/**/
+			/**/	for(String arg: args) m_locks.put(arg, server);
+			/**/
+			/**/	/*-----------------------------------------------------*/
+		}
+
+		return "0";
 	}
 
 	/*---------------------------------------------------------------------*/
 
-	private synchronized String unlock(String server, List<String> args)
+	private String unlock(String server, List<String> args)
 	{
-		/**/	String SERVER;
-		/**/
+		String SERVER;
+
+		synchronized(this)
+		{
 		/**/	for(String arg: args)
 		/**/	{
 		/**/		SERVER = m_locks.get(arg);
 		/**/
 		/**/		if(SERVER != null && SERVER.equals(server)) m_locks.remove(arg);
 		/**/	}
-		/**/
-		/**/	return "0";
+		}
+
+		return "0";
 	}
 
 	/*---------------------------------------------------------------------*/
 
 	private synchronized String unlockAll(String server, List<String> args)
 	{
+		List<String> tmp = new ArrayList<>();
+
+		synchronized(this)
+		{
 		/**/	/*---------------------------------------------------------*/
 		/**/
-		/**/	List<String> tmp = new ArrayList<>();
-		/**/
-		/**/	/*---------------------------------------------------------*/
-		/**/
-		/**/	for(Entry<String, String> entry: m_locks.entrySet())
-		/**/	{
-		/**/		if(entry.getValue().equals(server))
-		/**/		{
-		/**/			tmp.add(entry.getKey());
-		/**/		}
-		/**/	}
+		/**/	for(Entry<String, String> entry: m_locks.entrySet()) if(entry.getValue().equals(server)) tmp.add(entry.getKey());
 		/**/
 		/**/	/*---------------------------------------------------------*/
 		/**/
-		/**/	for(String lock: tmp)
-		/**/	{
-		/**/		m_locks.remove(lock);
-		/**/	}
+		/**/	for(String lock: tmp) m_locks.remove(lock);
 		/**/
 		/**/	/*---------------------------------------------------------*/
-		/**/
-		/**/	return "0";
+		}
+
+		return "0";
 	}
 
 	/*---------------------------------------------------------------------*/
