@@ -3,6 +3,7 @@
 	<name>AMIExclusionServer</name>
 	<comment></comment>
 	<projects>
+		<project>AMIExclusionServer</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
