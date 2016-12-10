@@ -1,0 +1,51 @@
+#!/bin/sh
+# chkconfig: - 50 50
+# description: AMI Exclusion Server
+
+#############################################################################
+
+THIS_SCRIPT=${BASH_SOURCE[0]:-$0}
+
+while [[ -n $(readlink $THIS_SCRIPT) ]]
+do
+  THIS_SCRIPT=$(readlink $THIS_SCRIPT)
+done
+
+AMI_HOME=$(cd $(dirname $THIS_SCRIPT) && pwd)
+
+#############################################################################
+
+status() {
+  if [[ -z $(ps -ef | grep "net\.hep\.ami\.exclusion\.Main") ]]
+  then
+    printf "AMIExclusionServer:\t\t[stopped]\n"
+  else
+    printf "AMIExclusionServer:\t\t[running]\n"
+  fi
+}
+
+#############################################################################
+
+case "$1" in
+  start)
+    $AMI_HOME/startAMIExclusionServer.sh
+    ;;
+  stop)
+    $AMI_HOME/stopAMIExclusionServer.sh
+    ;;
+  restart)
+    $AMI_HOME/restartAMIExclusionServer.sh
+    ;;
+  status)
+    status
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+esac
+
+#############################################################################
+
+exit $?
+
+#############################################################################
