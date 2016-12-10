@@ -1,5 +1,6 @@
 #!/bin/bash
 
+PORT=1358
 JAVA_HOME=/usr
 
 #############################################################################
@@ -38,7 +39,7 @@ then
 
     cd $AMI_HOME
 
-    $JAVA_HOME/bin/java -classpath $AMICLASSPATH net.hep.ami.exclusion.Main &> $AMI_HOME/log/AMIExclusionServer.out &
+    $JAVA_HOME/bin/java -classpath $AMICLASSPATH net.hep.ami.exclusion.Main $PORT &> $AMI_HOME/log/AMIExclusionServer.out &
 
   )
   ###########################################################################
