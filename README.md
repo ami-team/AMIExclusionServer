@@ -8,7 +8,7 @@ Compiling AMIExclusionServer
 
 1. Requirements
 
-  Make sure that [Java 8](http://www.oracle.com/technetwork/java/javase/) and [Maven 3](http://maven.apache.org/)are installed:
+  Make sure that [Java 8](http://www.oracle.com/technetwork/java/javase/) and [Maven 3](http://maven.apache.org/) are installed:
 	```bash
 java -version
 mvn -version
