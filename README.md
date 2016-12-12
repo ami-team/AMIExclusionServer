@@ -1,3 +1,8 @@
+[![][Build Status img]][Build Status]
+[![][Dependency Status img]][Dependency Status]
+[![][license img]][license]
+[![][Maven Central img]][Maven Central]
+
 AMIExclusionServer
 ==================
 
