@@ -1,5 +1,6 @@
-![Build Status](https://api.travis-ci.org/ami-team/AMIExclusionServer.svg?branch=master)
-![License](https://img.shields.io/badge/license-CeCILL--C-brightgreen.svg)
+[![][Build Status img]][Build Status]
+[![][Dependency Status img]][Dependency Status]
+[![][license img]][license]
 
 AMIExclusionServer
 ==================
@@ -40,3 +41,12 @@ Install as Linux service
 	service AMIExclusionServer start
 	service AMIExclusionServer stop
 	service AMIExclusionServer status
+
+[Build Status]:https://travis-ci.org/ami-team/AMIExclusionServer/
+[Build Status img]:https://api.travis-ci.org/ami-team/AMIExclusionServer.svg?branch=master
+
+[Dependency Status]:https://www.versioneye.com/user/projects/584f35a661ff4a003d3c3964/
+[Dependency Status img]:https://www.versioneye.com/user/projects/584f35a661ff4a003d3c3964/badge.svg?style=flat
+
+[license]:http://www.cecill.info/
+[license img]:https://img.shields.io/badge/license-CeCILL-blue.svg
