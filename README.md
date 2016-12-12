@@ -1,4 +1,5 @@
 ![Build Status](https://api.travis-ci.org/ami-team/AMIExclusionServer.svg?branch=master)
+![License](https://img.shields.io/badge/license-CeCILL--C-brightgreen.svg)
 
 AMIExclusionServer
 ==================
