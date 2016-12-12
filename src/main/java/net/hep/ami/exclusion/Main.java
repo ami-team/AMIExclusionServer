@@ -29,7 +29,7 @@ public class Main extends AbstractHandler
 {
 	/*---------------------------------------------------------------------*/
 
-	private final Map<String, String> m_locks = new HashMap<>();
+	private final HashMap<String, String> m_locks = new HashMap<>();
 
 	/*---------------------------------------------------------------------*/
 
@@ -112,8 +112,6 @@ public class Main extends AbstractHandler
 		}
 
 		/*-----------------------------------------------------------------*/
-		/* OKAY                                                            */
-		/*-----------------------------------------------------------------*/
 
 		res.setContentType("text/plain");
 
@@ -130,7 +128,7 @@ public class Main extends AbstractHandler
 		{
 			/**/	/*-----------------------------------------------------*/
 			/**/
-			/**/	for(String arg: args) if(m_locks.get(arg) != null) return "1";
+			/**/	for(String arg: args) if(m_locks.containsKey(arg)) return "1";
 			/**/
 			/**/	/*-----------------------------------------------------*/
 			/**/
