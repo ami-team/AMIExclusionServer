@@ -1,3 +1,5 @@
+![Build Status](https://api.travis-ci.org/ami-team/AMIExclusionServer.svg?branch=master)
+
 AMIExclusionServer
 ==================
 
