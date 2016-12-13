@@ -48,5 +48,5 @@ Install as Linux service
 [Dependency Status]:https://www.versioneye.com/user/projects/584f35a661ff4a003d3c3964/
 [Dependency Status img]:https://www.versioneye.com/user/projects/584f35a661ff4a003d3c3964/badge.svg?style=flat
 
-[License]:http://www.cecill.info/
-[License img]:https://img.shields.io/badge/license-CeCILL-blue.svg
+[License]:http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.txt
+[License img]:https://img.shields.io/badge/license-CeCILL--C-blue.svg
