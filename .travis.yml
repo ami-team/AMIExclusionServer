@@ -4,4 +4,4 @@ jdk:
  - oraclejdk8
 
 script:
- mvn compile
+ mvn package
