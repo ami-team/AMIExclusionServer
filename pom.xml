@@ -6,10 +6,32 @@
 	<artifactId>AMIExclusionServer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<packaging>jar</packaging>
+
 	<name>AMIExclusionServer</name>
+	<description></description>
 	<url>http://www.cern.ch/ami/</url>
 
-	<packaging>jar</packaging>
+	<licenses>
+		<license>
+			<name>CeCILL, Version 2.1</name>
+			<url>http://www.cecill.info/licences/Licence_CeCILL_V2.1-en.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Jerome Odier</name>
+			<email>jerome.odier@lpsc.in2p3.fr</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://github.com/ami-team/AMIExclusionServer.git</connection>
+		<developerConnection>scm:git:git@github.com:ami-team/AMIExclusionServer.git</developerConnection>
+		<url>https://github.com/ami-team/AMIExclusionServer/</url>
+		<tag>HEAD</tag>
+	</scm>
 
 	<properties>
 		<jetty.version>9.4.0.v20161208</jetty.version>
