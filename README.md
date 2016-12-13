@@ -5,7 +5,7 @@
 AMIExclusionServer
 ==================
 
-The ATLAS Metadata Interface Exclusion Server (AMIExclusionServer) is TODO. It was originally developed for the A Toroidal LHC ApparatuS (ATLAS) experiment, one of the two general-purpose detectors at the Large Hadron Collider (LHC).
+The ATLAS Metadata Interface Exclusion Server (AMIExclusionServer) is used by the ATLAS Metadata Interface Task Server ([AMITaskServer](https://github.com/ami-team/AMITaskServer/)) for ... It was originally developed for the A Toroidal LHC ApparatuS (ATLAS) experiment, one of the two general-purpose detectors at the Large Hadron Collider (LHC).
 
 Compiling AMIExclusionServer
 ============================
