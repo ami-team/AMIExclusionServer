@@ -1,6 +1,6 @@
 [![][Build Status img]][Build Status]
 [![][Dependency Status img]][Dependency Status]
-[![][license img]][license]
+[![][License img]][License]
 
 AMIExclusionServer
 ==================
@@ -48,5 +48,5 @@ Install as Linux service
 [Dependency Status]:https://www.versioneye.com/user/projects/584f35a661ff4a003d3c3964/
 [Dependency Status img]:https://www.versioneye.com/user/projects/584f35a661ff4a003d3c3964/badge.svg?style=flat
 
-[license]:http://www.cecill.info/
-[license img]:https://img.shields.io/badge/license-CeCILL-blue.svg
+[License]:http://www.cecill.info/
+[License img]:https://img.shields.io/badge/license-CeCILL-blue.svg
