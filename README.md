@@ -20,7 +20,7 @@ mvn -version
 
 2. Compiling sources
 	```bash
-mvn assembly:assembly
+mvn package
 ```
 
 Generated standalone bundle: *target/AMIExclusionServer-X.X.X-bundle.zip*
