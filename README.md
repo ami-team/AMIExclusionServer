@@ -48,19 +48,23 @@ Generated standalone bundle: *target/AMIExclusionServer-X.X.X-bundle.zip*
 Using AMIExclusionServer
 ===================
 
-	./AMIExclusionServer start
-	./AMIExclusionServer stop
-	./AMIExclusionServer status
-	./AMIExclusionServer --help
+```bash
+./AMIExclusionServer start
+./AMIExclusionServer stop
+./AMIExclusionServer status
+./AMIExclusionServer --help
+```
 
 Install as Linux service
 ========================
 
-	./installAMIExclusionServer.sh
+```bash
+./installAMIExclusionServer.sh
 
-	service AMIExclusionServer start
-	service AMIExclusionServer stop
-	service AMIExclusionServer status
+service AMIExclusionServer start
+service AMIExclusionServer stop
+service AMIExclusionServer status
+```
 
 [Build Status]:https://travis-ci.org/ami-team/AMIExclusionServer/
 [Build Status img]:https://api.travis-ci.org/ami-team/AMIExclusionServer.svg?branch=master
