@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PORT=1358
-JAVA_HOME=/usr
+JAVA_HOME=/opt/java/latest
 
 #############################################################################
 
@@ -39,7 +39,7 @@ then
 
     cd $AMI_HOME
 
-    $JAVA_HOME/bin/java -classpath $AMICLASSPATH net.hep.ami.exclusion.Main $PORT &> $AMI_HOME/log/AMIExclusionServer.out &
+    $JAVA_HOME/bin/java -Dfile.encoding=UTF-8 -Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom -classpath $AMICLASSPATH net.hep.ami.exclusion.Main $PORT &> $AMI_HOME/log/AMIExclusionServer.out &
 
   )
   ###########################################################################

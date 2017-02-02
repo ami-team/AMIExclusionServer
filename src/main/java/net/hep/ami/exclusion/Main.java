@@ -44,6 +44,8 @@ public class Main extends AbstractHandler
 	{
 		String data;
 
+		baseRequest.setHandled(true);
+
 		/*-----------------------------------------------------------------*/
 		/* EXECUTE COMMAND                                                 */
 		/*-----------------------------------------------------------------*/
@@ -98,24 +100,17 @@ public class Main extends AbstractHandler
 		/* CLOSE WRITER                                                    */
 		/*-----------------------------------------------------------------*/
 
-		try
-		{
-			PrintWriter writer = res.getWriter();
+		PrintWriter writer = res.getWriter();
 
-			writer.print(data);
+		writer.print(data);
 
-			writer.close();
-		}
-		finally
-		{
-			baseRequest.setHandled(true);
-		}
+		writer.close();
 
 		/*-----------------------------------------------------------------*/
 
 		res.setContentType("text/plain");
 
-		res.setStatus(HttpServletResponse.SC_OK);
+		res.setStatus(200);
 
 		/*-----------------------------------------------------------------*/
 	}
