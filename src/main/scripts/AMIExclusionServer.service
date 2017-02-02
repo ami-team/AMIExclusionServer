@@ -1,0 +1,17 @@
+# /etc/systemd/system/AMIExclusionServer.service
+
+[Unit]
+Description=AMI Exclusion Server
+After=syslog.target network.target
+
+[Service]
+Type=forking
+
+ExecStart=/opt/AMIExclusionServer/latest/startAMIExclusionServer.sh
+ExecStop=/opt/AMIExclusionServer/latest/stopAMIExclusionServer.sh
+
+User=tomcat
+Group=tomcat
+
+[Install]
+WantedBy=multi-user.target
